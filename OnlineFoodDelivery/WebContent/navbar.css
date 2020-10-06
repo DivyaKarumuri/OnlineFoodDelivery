@@ -1,0 +1,36 @@
+.navbar-inverse {
+	font-size : 2em;
+	background: black;
+}
+.navbar-nav {
+	padding : 0 0 0 1em;
+}
+.navbar-right {
+	margin-right : 1em;
+}
+.navbar-inverse div li:hover {
+	text-decoration : none;
+	color : #fff;
+	background : pink;
+	border-radius: 0.5em;
+}
+.navbar-inverse ul ul{
+	position : absolute;
+	padding : 0;
+	min-width : 50em;
+	display : none;
+	top : 100%;
+	left : 0;
+}
+.navbar-inverse div ul :hover > ul{				
+	display : block;
+	position : absolute;
+	background-color : black;
+	min-width : 7em;
+	z-index : 1;
+}
+.navbar-inverse > div > ul > li > ul >  a {
+	text-decoration : none;
+	color : #fff;
+	border-radius: 0.5em;
+}

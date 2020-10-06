@@ -1,0 +1,47 @@
+.label {
+	padding : 1em 0em 0em 7em;
+	font-size : 1.5em;
+	font-weight : bold;
+	color : #130f40;
+}
+.form {
+	padding : 1em 2em;
+}
+.form .iid {
+	font-size : 1em;
+	color : #130f40;
+	margin : 1em 0;
+}
+.form input {
+	height : 2em;
+	width : 25em;
+	padding : 0 0.5em;
+	font-size : 1em;
+	outline : none;
+	border : 0.2em solid silver;
+}
+.form .iname,.rname,.price {
+	margin-top : 2em;
+}
+.form button {
+	margin : 2em 0 0em 0;
+	height : 3em;
+	width : 25em;
+	font-size : 1em;
+	color : white;
+	outline : none;
+	cursor : pointer;
+	font-weight : bold;
+	background : #1A237E;
+	border-radius :0.5em;
+	border : 0.2em solid #3949AB;
+	transition : .5s;
+	
+}
+.form button:hover {
+	background : #151c6a;
+}
+.form button a{
+	text-decoration : none;
+	color : white;
+}

@@ -1,0 +1,50 @@
+.boxcontainer {
+	margin : auto;
+	margin-top : 32%;
+	position : relative;
+	width : 50em;
+	height : 5em;
+	border : 0.2em solid #2980b9;
+	border-radius : 2em;
+}
+.elementscontainer {
+	width : 100%;
+	heigth : 100%;
+	vertical-align : middle;
+}
+.search {
+	border : none;
+	height : 100%;
+	width : 100%;
+	padding : 0.5em 0.5em 0.5em 0.5em;
+	border-radius : 2em;
+	font-size : 2em;
+	font-family : "Numito";
+	color : #424242;
+	font-weight : 600;
+}
+.search:focus {
+	text-decoration : none;
+	outline : none;
+}
+.fa-search {
+	font-size : 26;
+	color : #2980b9;
+}
+#myTable {
+	margin-top : 1em;
+	border-collapse : collapse;
+	width : 40em;
+	border : 0.2em solid #ddd;
+	font-size : 2em;
+}
+#myTable th, #myTable td {
+	text-align : left;
+	padding : 1em;
+}
+#myTable tr {
+	border-bottom : 1px solid #ddd;
+}
+#myTable tr.header, #myTable tr:hover {
+	background-color : #f1f1f1;
+}

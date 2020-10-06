@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>ONLINE FOOD DELIEVRY HOME PAGE</title>
+		<link rel = "stylesheet" href = "navbar.css">
+		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!--apply navigationbar-->
+		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+		<style>
+			body {
+				background : url('images/homeimg.jpg') no-repeat center center fixed;
+			}
+		</style>	
+	</head>
+	<body>
+		<nav class = "navbar navbar-inverse">
+			<div class = "container-fluid">
+				<ul class = "nav navbar-nav">
+					<li><a href = "AdminHomePage.jsp" ><i class = "fa fa-home">HOME</i></a></li>
+					<li><a href = "additem.jsp"><i class = "fa fa-plus">ADD ITEM</i></a></li>
+					<li><a href = "deleteitem.jsp"><i class = "fa fa-trash">DELETE ITEM</i></a></li>
+					<li><a href = "updateitem.jsp"><i class = "fa fa-pencil">UPDATE ITEM</i></a></li>
+				</ul>
+				<ul class = "nav navbar-nav navbar-right">
+					<li><a href = "orderdetails.jsp"><i class = "fa fa-info-circle">Order Details</i></a></li>
+					<li><a href = "#"><i class = "fa fa-sign-out">LOGOUT</i></a></li>
+				</ul>
+		</div>
+		</nav>
+	</body>
+</html>
