@@ -9,7 +9,8 @@
 			body {
 				background : url('images/food.jpg') no-repeat center center fixed;
 			}
-		</style>	
+		</style>
+		</head>	
 		<body>
 			<nav class = "navbar navbar-inverse">
 			<div class = "container-fluid">
@@ -20,7 +21,7 @@
 							<a href = "CustomerReg.jsp">Customer</a>
 						</ul>
 					</li>
-					<li><a href = ""><i class = "fa fa-sign-in">SIGNIN</i></a>
+					<li><a href = "#"><i class = "fa fa-sign-in">SIGNIN</i></a>
 						<ul>
 							<a href = "AdminLogin.jsp">Admin</a>
 							<a href = "CustomerLogin.jsp">Customer</a>
@@ -30,6 +31,4 @@
 		</div>
 		</nav>
 		</body>
-	</head>
-
 </html>
