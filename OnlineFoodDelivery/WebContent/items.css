@@ -20,7 +20,7 @@
 	outline : none;
 	border : 0.2em solid silver;
 }
-.form .iname,.rname,.price {
+.form .iname,.rname,.price,.deliverycharges,.discount {
 	margin-top : 2em;
 }
 .form button {

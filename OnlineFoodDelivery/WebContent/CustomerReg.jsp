@@ -10,16 +10,9 @@
 		<link rel = "stylesheet" type = "text/css" href = "CA.css">
 		<link rel = "stylesheet" type = "text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script type = "text/javascript" src = "Account.js"> </script>
-		<title>SignUp Form</title>
+		<title> Customer Login Page </title>
 	</head>
 	<body>
-		<div class = "popup">
-			<div class = "popup-close">
-				<button>
-					<h6><a href = "welcomePage.jsp">X </a></h6>
-				</button>
-			</div>
-		</div>
 		<form action = "" method = "post">
 		<div class = "signup-panel">
 			<div class = "panel-body">
@@ -53,22 +46,70 @@
 						&nbsp;&nbsp; <b> Female </b>
 					<input type = "radio" name = "gender" id = "gender" class = "gender">
 			</div> <br>
+			<div class = "dropdown-list-country" id = "Country" required = "required">
+				<select class = "select1"> 
+					<option> Country </option>
+					<option> India </option>
+				</select>
+			</div>
+			<div class = "dropdown-list-state" id = "state" required = "required">
+				<select class = "select1">
+					<option> State </option>
+					<option> Andra Pradesh </option>
+					<option> Arunachal Pradesh </option>
+					<option> Assam </option>
+					<option> Bihar </option>
+					<option> Chandigarh </option>
+					<option> Chhattisgarh </option>
+					<option> Dadar and Nagar Haveli </option>
+					<option> Daman and Diu </option>
+					<option> Delhi </option>
+					<option> Goa </option>
+					<option> Gujarat </option>
+					<option> Haryana </option>
+					<option> Himachal Pradesh </option>
+					<option> Jammu and kashmir </option>
+					<option> Jharkand </option>
+					<option> Karnataka </option>
+					<option> Kerala </option>
+					<option> Lakshadeep </option>
+					<option> Madhya Pradesh </option>
+					<option> Maharashtra </option>
+					<option> Manipur </option>
+					<option> Meghalaya </option>
+					<option> Mizoram </option>
+					<option> Nagaland </option>
+					<option> Orissa </option>
+					<option> Pondicherry </option>
+					<option> Punjab </option>
+					<option> Rajasthan </option>
+					<option> Sikkim </option>
+					<option> Tamil Nadu </option>
+					<option> Telangana </option>
+					<option> Tripura </option>
+					<option> Uttaranchal </option>
+					<option> Uttar Pradesh </option>
+					<option> West Bengal </option>
+				</select>
+			</div> <br>
+			<!-- Address -->
 			<div class = "Address">
 				<input type = "text" name = "address" id = "address-info" class = "address-name" placeholder = "House No./Appartment No." required>
 				<input type = "text" name = "address" id = "address-info" class = "address-name" placeholder = "Road Name, Area, Colony" required>
 			</div> <br>
-			<div class = "location">
-				<input type = "text" name = "location" id = "location_city" class = "loacation-city" placeholder = "City" required>
-				<input type = "text" name = "location" id = "location_state" class = "location_state" placeholder = "State" required>
+			<!-- city -->
+			<div class = "location-city">
+				<input type = "text" name = "city" id = "city-info" class = "location-city" placeholder = "City" required>
 			</div> <br>
+			<!-- Pincode -->
 			<div class = "pincode-number">
 				<input type = "text" name = "pincode-number" id = "pincode-number" class = "pincode-number" placeholder = "Pincode" maxlength = "6">
 			</div> <br>
+			<!-- Mobile Number -->
 			<div class = "mobile">
 				<input type = "text" name = "number" id = "number" class = "number" placeholder = "Mobile Number" required  maxlength = "10">
 			</div>
-			<button class = "btn signup"> Sign Up </button><br>
-			<h3>Already registered : <a href = "CustomerLogin.jsp">sign in</a></h3><br>
+			<button class = "btn signup"> Sign Up </button>
 		</div>
 	</form>
 	</body>

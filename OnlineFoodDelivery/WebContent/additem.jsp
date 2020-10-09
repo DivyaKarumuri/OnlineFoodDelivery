@@ -12,7 +12,7 @@
 			}
 			.container {
 				position : relative;
-				margin : 8em 1em 0em 75em;
+				margin : 1em 1em 0em 75em;
 				width : 30em;
 				height : auto;
 				background : #dedede;
@@ -45,11 +45,18 @@
 				<div class = "iname">Item Name</div>
 				<input type = "text" name = "iname" id="iname" required = "required">
 				
+				<div class = "price">Price</div>
+				<input type = "number" name = "price" id="price" required = "required">
+				
+				<div class = "deliverycharges">Delivery Charges</div>
+				<input type = "number" name = "deliverycharges" id="deliverycharges" required = "required">
+				
+				<div class = "discount">Discount Amount</div>
+				<input type = "number" name = "discount" id="discount" required = "required">
+				
 				<div class = "rname">Resturant Name</div>
 				<input type = "text" name = "rname" id="rname" required = "required">
 				
-				<div class = "price">Price</div>
-				<input type = "number" name = "price" id="price" required = "required">
 				
 				<button type = "submit" id="btn" name ="btn"> ADD </button>
 				<button type = "submit" id="btn" name ="btn"><a href = "AdminHomePage.jsp">BACK TO HOME</a></button><br><br>

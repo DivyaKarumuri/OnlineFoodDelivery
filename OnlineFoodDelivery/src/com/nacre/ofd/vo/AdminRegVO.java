@@ -1,15 +1,14 @@
 package com.nacre.ofd.vo;
 
-public class AdminRegEncapsulation {
+public class AdminRegVO {
 	private String fname;
 	private String lname;
-	private String email;
+	private String uname;
 	private String pass;
 	private String confirmpass;
-	private String mobno;
-	private String dob;
+	private String email;
 	private String gen;
-	
+	private String mobno;
 	public String getFname() {
 		return fname;
 	}
@@ -20,7 +19,13 @@ public class AdminRegEncapsulation {
 	public String getLname() {
 		return lname;
 	}
-	public void setLname(String lname) {
+	public void setLname(String uname) {
+		this.lname = lname;
+	}
+	public String getUname() {
+		return lname;
+	}
+	public void setUname(String uname) {
 		this.lname = lname;
 	}
 	
@@ -51,13 +56,6 @@ public class AdminRegEncapsulation {
 	public void setMobno(String mobno) {
 		this.mobno = mobno;
 	}
-	
-	public String getDob() {
-		return dob;
-	}
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
 	public String getGen() {
 		return gen;
 	}
@@ -65,3 +63,4 @@ public class AdminRegEncapsulation {
 		this.gen = gen;
 	}
 }
+
