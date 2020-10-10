@@ -39,9 +39,9 @@
 	</head>
 	<body>
 		<%
-			
+			if(session.getAttribute("mobno") == null) {
 				response.sendRedirect("AdminLogin.jsp");
-			
+			}
 		%>
 		<div class = "container">
 			<h1 class = "label"> ADMIN REGISTRATION </h1>

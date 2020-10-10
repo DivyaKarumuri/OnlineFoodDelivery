@@ -61,7 +61,6 @@ public class AddItems extends HttpServlet {
 				
 		if(flag == 1) {
 			HttpSession session = request.getSession();
-			//session.setAttribute("upload", upload);
 			response.sendRedirect("additem.jsp");
 		}
 		else {
