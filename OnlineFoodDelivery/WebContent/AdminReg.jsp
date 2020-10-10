@@ -6,51 +6,60 @@
 		<script type = "text/javascript">
 		function validation() {
 			var uname = document.signup.uname.value;
-			var pwd = document.signup.pwd.value;
-			var mob = document.signup.mob.value;
+			var pswd = document.signup.pswd.value;
+			var pswd1 = document.signup.pswd1.value;
+			var mobno = document.signup.mobno.value;
 			//checking for empty fields
-			if(uname == "" || pwd == "" || mob == "") {
+			if(uname == "" || pswd == "" || mobno == "") {
 				alert("Fields should not be blank");
-				return;
+				return false;
 			}
 			//checking size of password 
-			if(pwd.length < 6 || pwd.length > 12) {
+			if(pswd.length < 6 || pswd.length > 12) {
 				alert("password must be 6 to 12 characters");
-				return;
+				return false;
 			}
 			//username should not start with _,@ and number
 			var str = uname.slice(0,1);
 			if(uname.slice(0,1) == "_" || uname.slice(0,1) == "@" || str.match(/[0-9]/g) != null){
 				alert("username should not start with _, @ and number");
-				return;
+				return false;
 			}
 			var mobexpr=/^[6789]\d{9}$/;
-			if(mobexpr.test(mob)==false || mob.length != 10) {
+			if(mobexpr.test(mobno)==false || mobno.length != 10) {
 				alert("mobile number sholud be start with 6 or 7 or 8 or 9 and length sholud be 10");
-				return;
+				return false;
+			}
+			if(pswd != pswd1) {
+				alert("password and confirm password should be same");
+				return false;
 			}
 		}
 		</script>
-		
 	</head>
 	<body>
+		<%
+			
+				response.sendRedirect("AdminLogin.jsp");
+			
+		%>
 		<div class = "container">
-			<h1 class = "label"> ADMIN LOGIN </h1>
-			<form class = "signup_form" method = "post" name = "signup" action = "" onsubmit = "return validation()">
+			<h1 class = "label"> ADMIN REGISTRATION </h1>
+			<form class = "signup_form" method = "post" name = "signup" action = "AdminRegisteration" onsubmit = "return validation()">
 				
-				<input type = "text" class = "font" name = "fname" id="firstname" required = "required" placeholder = "first name"> 
+				<input type = "text" class = "font" name = "fname" required = "required" placeholder = "first name"> 
 				
-				<input type = "text" class = "font" name = "lname" id="lastname" required = "required" placeholder = "last name"> 
+				<input type = "text" class = "font" name = "lname" required = "required" placeholder = "last name"> 
 				
-				<input type = "text" class = "font" name = "uname" id="username" required = "required" placeholder = "user name"> 
+				<input type = "text" class = "font" name = "uname" required = "required" placeholder = "user name"> 
 				
-				<input type = "email" class = "font" name = "email" id="email" required = "required" placeholder = "Email ID"> 
+				<input type = "email" class = "font" name = "email" required = "required" placeholder = "Email ID"> 
 				
-				<input type = "password" class = "font" name = "pswd" id="password" required = "required" placeholder = "password">
+				<input type = "password" class = "font" name = "pswd" required = "required" placeholder = "password">
 				
-				<input type = "password" class = "font" name = "pswd1" id="password" required = "required" placeholder = "confirm password">
+				<input type = "password" class = "font" name = "pswd1" required = "required" placeholder = "confirm password">
 				
-				<input type = "number" class = "font" name = "mobno" id="mobilenum" required = "required" placeholder = "mobilenum">
+				<input type = "number" class = "font" name = "mobno" required = "required" placeholder = "mobilenum">
 				
 				<input type = "date" class = "font" name = "dob" placeholder = "select the date of birth">
 				
@@ -59,12 +68,12 @@
 				
 				<select class = "font" name = "country"> 
 					<option hidden> Country </option>
-					<option> India </option>
+					<option value = "India"> India </option>
 				</select>
 				
 				<select class = "font" name = "state">
 					<option hidden> State </option>
-					<option> Andra Pradesh </option>
+					<option value = "Andhar Pradesh"> Andhra Pradesh </option>
 					<option> Arunachal Pradesh </option>
 					<option> Assam </option>
 					<option> Bihar </option>

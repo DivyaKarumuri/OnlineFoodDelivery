@@ -12,11 +12,6 @@
 		</style>	
 	</head>
 	<body>
-		<%
-			if(session.getAttribute("mobno") == null) {
-				response.sendRedirect("AdminLogin.jsp");
-			}
-		%>
 		<nav class = "navbar navbar-inverse">
 			<div class = "container-fluid">
 				<ul class = "nav navbar-nav">

@@ -25,7 +25,7 @@ public class AdminLoginDAO implements loginDAOI{
 				String SQL = "select * from tab_register";
 				ResultSet rs = stmt.executeQuery(SQL);
 				while(rs.next()) {
-					if(rs.getString(3).equals(adminLoginBO.getUname()) && rs.getString(4).equals(adminLoginBO.getPswd()) && rs.getLong(14) == adminLoginBO.getMobno()) {
+					if(rs.getString(3).equals(adminLoginBO.getUname()) && rs.getString(5).equals(adminLoginBO.getPswd()) && rs.getLong(7) == adminLoginBO.getMobno()) {
 						ps = con.prepareStatement("insert into tab_login values(?,?,?)");
 						ps.setString(1, adminLoginBO.getUname());
 						ps.setString(2, adminLoginBO.getPswd());

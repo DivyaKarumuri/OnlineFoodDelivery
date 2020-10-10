@@ -36,11 +36,12 @@
 				</ul>
 		</div>
 		</nav>
+		<%
+				response.sendRedirect("additem.jsp");
+		%>
 		<div class = "container">
 			<br><label class = "label">ADD ITEM</label>
-			<form class = "form" method = "post" name = "login" action = "#">
-				<div class = "addID">Item ID</div>
-				<input type = "number" name = "iid" id="id" required = "required"> 
+			<form class = "form" method = "post" name = "login" action = "AddItems" enctype = "multipart/form-data">
 				
 				<div class = "iname">Item Name</div>
 				<input type = "text" name = "iname" id="iname" required = "required">
@@ -57,8 +58,9 @@
 				<div class = "rname">Resturant Name</div>
 				<input type = "text" name = "rname" id="rname" required = "required">
 				
+				<input type = "file" id="btn" name ="upload" value = "UPLOAD IMAGE">
 				
-				<button type = "submit" id="btn" name ="btn"> ADD </button>
+				<button type = "submit" id="btn" name ="add"> ADD </button>
 				<button type = "submit" id="btn" name ="btn"><a href = "AdminHomePage.jsp">BACK TO HOME</a></button><br><br>
 			</form>
 		</div>

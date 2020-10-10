@@ -4,63 +4,108 @@ public class AdminRegVO {
 	private String fname;
 	private String lname;
 	private String uname;
-	private String pass;
-	private String confirmpass;
+	private String pswd;
+	private String pswd1;
 	private String email;
-	private String gen;
 	private String mobno;
+	private String dob;
+	private String gen;
+	private String country;
+	private String state;
+	private String hno;
+	private String rname;
+	private String city;
+	private String pincode;
+	
 	public String getFname() {
 		return fname;
 	}
 	public void setFname(String fname) {
 		this.fname = fname;
 	}
-	
 	public String getLname() {
 		return lname;
 	}
-	public void setLname(String uname) {
+	public void setLname(String lname) {
 		this.lname = lname;
 	}
 	public String getUname() {
-		return lname;
+		return uname;
 	}
 	public void setUname(String uname) {
-		this.lname = lname;
+		this.uname = uname;
 	}
-	
+	public String getPswd() {
+		return pswd;
+	}
+	public void setPswd(String pswd) {
+		this.pswd = pswd;
+	}
+	public String getPswd1() {
+		return pswd1;
+	}
+	public void setPswd1(String pswd1) {
+		this.pswd1 = pswd1;
+	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public String getPass() {
-		return pass;
-	}
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
-	
-	public String getConfirmpass() {
-		return confirmpass;
-	}
-	public void setConfirmpass(String confirmpass) {
-		this.confirmpass = confirmpass;
-	}
-	
 	public String getMobno() {
 		return mobno;
 	}
 	public void setMobno(String mobno) {
 		this.mobno = mobno;
 	}
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
 	public String getGen() {
 		return gen;
 	}
 	public void setGen(String gen) {
 		this.gen = gen;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getHno() {
+		return hno;
+	}
+	public void setHno(String hno) {
+		this.hno = hno;
+	}
+	public String getRname() {
+		return rname;
+	}
+	public void setRname(String rname) {
+		this.rname = rname;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getPincode() {
+		return pincode;
+	}
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
 	}
 }
 

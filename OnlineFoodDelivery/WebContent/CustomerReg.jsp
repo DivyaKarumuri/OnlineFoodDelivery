@@ -1,116 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 	<head>
-		<meta charset = "UTF-8">
-		<meta name = "viewport" content = "width=device-width, initial-scale = 1">
-		<link rel =  "stylesheet" type = "text/css" href = "bootstrap.css">
-		<script type = "text/javascript" src = "jquery-3.5.1.js"> </script>
-		<script type = "text/javascript" src = "popper.js"> </script>
-		<script type = "text/javascript" src = "bootstrap.js"> </script>
-		<link rel = "stylesheet" type = "text/css" href = "CA.css">
-		<link rel = "stylesheet" type = "text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script type = "text/javascript" src = "Account.js"> </script>
-		<title> Customer Login Page </title>
+		<title>Registration Form</title>
+		<link rel = "stylesheet" href = "CA.css">
+		<script type = "text/javascript">
+		function validation() {
+			var uname = document.signup.uname.value;
+			var pswd = document.signup.pswd.value;
+			var pswd1 = document.signup.pswd1.value;
+			var mobno = document.signup.mobno.value;
+			//checking for empty fields
+			if(uname == "" || pswd == "" || mobno == "") {
+				alert("Fields should not be blank");
+				return false;
+			}
+			//checking size of password 
+			if(pswd.length < 6 || pswd.length > 12) {
+				alert("password must be 6 to 12 characters");
+				return false;
+			}
+			//username should not start with _,@ and number
+			var str = uname.slice(0,1);
+			if(uname.slice(0,1) == "_" || uname.slice(0,1) == "@" || str.match(/[0-9]/g) != null){
+				alert("username should not start with _, @ and number");
+				return false;
+			}
+			var mobexpr=/^[6789]\d{9}$/;
+			if(mobexpr.test(mobno)==false || mobno.length != 10) {
+				alert("mobile number sholud be start with 6 or 7 or 8 or 9 and length sholud be 10");
+				return false;
+			}
+			if(pswd != pswd1) {
+				alert("password and confirm password should be same");
+				return false;
+			}
+		}
+		</script>
 	</head>
 	<body>
-		<form action = "" method = "post">
-		<div class = "signup-panel">
-			<div class = "panel-body">
-				<div class = "heading"> REGISTRATION FORM </div> <br>
-				<h5 class = "title"> Customer Sign Up Page </h5>
-			</div>
-			<div class = "column-1">
-				<input type = "text" name = "fname" id = "firstname" class = "fname" placeholder = "First Name" required ="required">
-				<input type = "text" name = "lname" id = "lastname" class = "lname" placeholder = "Last Name" required = "required">
-			</div> <br>
-			<div class = "column-2"> 
-				<input type = "text" name = "uname" id = "username" class = "uname" placeholder = "User Name" required = "required" title = "Username must not be blank and contain only letters, numbers and underscore." pattern = "\w+" maxlength = "15"> 
-			</div> <br>
-			<div>
-				<input type = "password" name = "pass" id = "password" class = "pass" placeholder = "Create Password" required = "required" title = "Password must contains atleast 8 characters, including UPPER/lowercase and numbers" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" onchange = "this.setCustomValidity(this.validity.Mismatch ? this.title = ''); if(this.checkValidity()) form.pass1.pattern = RegExp.escape(this.value);" maxlength = "15">
-				<span class = "span1"> <i class = "fa fa-eye" aria-hidden = "true" onclick = "validatePassword1()" title = "Show Password"> </i> </span>
-			</div> <br>
-			<div>
-				<input type = "password" name = "pass1" id = "confirm_password" class = "pass" placeholder = "Confirm Password" required = "required" title = "Plese enter the same password as above" pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" onchange = "this.setCustomValidity(this.validity.Mismatch ? this.title = '');" maxlength = "15">
-				<span class = "span1"> <i class = "fa fa-eye" aria-hidden = "true" onclick = "validatePassword2()" title = "Show Password"> </i> </span>
-			</div> <br>
-			<div>
-				<input type = "email" name = "email" id = "mail" class = "mail" placeholder = "Enter Your Mailid" required = "required">
-			</div> <br>
-			<div class = "gender-panel">
-				<div>
-					 <h5> Gender </h5> 
-				</div>	
-						&nbsp; &nbsp; <b> Male </b>
-					<input type = "radio" name = "gender" id = "gender" class = "gender">
-						&nbsp;&nbsp; <b> Female </b>
-					<input type = "radio" name = "gender" id = "gender" class = "gender">
-			</div> <br>
-			<div class = "dropdown-list-country" id = "Country" required = "required">
-				<select class = "select1"> 
-					<option> Country </option>
-					<option> India </option>
+		<div class = "container">
+			<h1 class = "label"> CUSTOMER LOGIN </h1>
+			<form class = "signup_form" method = "post" name = "signup" action = "AdminReg" onsubmit = "return validation()">
+				
+				<input type = "text" class = "font" name = "fname" required = "required" placeholder = "first name"> 
+				
+				<input type = "text" class = "font" name = "lname" required = "required" placeholder = "last name"> 
+				
+				<input type = "text" class = "font" name = "uname" required = "required" placeholder = "user name"> 
+				
+				<input type = "email" class = "font" name = "email" required = "required" placeholder = "Email ID"> 
+				
+				<input type = "password" class = "font" name = "pswd" required = "required" placeholder = "password">
+				
+				<input type = "password" class = "font" name = "pswd1" required = "required" placeholder = "confirm password">
+				
+				<input type = "number" class = "font" name = "mobno" required = "required" placeholder = "mobilenum">
+				
+				<input type = "date" class = "font" name = "dob" placeholder = "select the date of birth">
+				
+				<p>Gender: </p><p><input type = "radio" name = "gen" value = "Male">Male
+				<input type = "radio" name = "gen" value = "Female">Female</p>
+				
+				<select class = "font" name = "country"> 
+					<option hidden> Country </option>
+					<option value = "Indai"> India </option>
 				</select>
-			</div>
-			<div class = "dropdown-list-state" id = "state" required = "required">
-				<select class = "select1">
-					<option> State </option>
-					<option> Andra Pradesh </option>
-					<option> Arunachal Pradesh </option>
-					<option> Assam </option>
-					<option> Bihar </option>
-					<option> Chandigarh </option>
-					<option> Chhattisgarh </option>
-					<option> Dadar and Nagar Haveli </option>
-					<option> Daman and Diu </option>
-					<option> Delhi </option>
-					<option> Goa </option>
-					<option> Gujarat </option>
-					<option> Haryana </option>
-					<option> Himachal Pradesh </option>
-					<option> Jammu and kashmir </option>
-					<option> Jharkand </option>
-					<option> Karnataka </option>
-					<option> Kerala </option>
-					<option> Lakshadeep </option>
-					<option> Madhya Pradesh </option>
-					<option> Maharashtra </option>
-					<option> Manipur </option>
-					<option> Meghalaya </option>
-					<option> Mizoram </option>
-					<option> Nagaland </option>
-					<option> Orissa </option>
-					<option> Pondicherry </option>
-					<option> Punjab </option>
-					<option> Rajasthan </option>
-					<option> Sikkim </option>
-					<option> Tamil Nadu </option>
-					<option> Telangana </option>
-					<option> Tripura </option>
-					<option> Uttaranchal </option>
-					<option> Uttar Pradesh </option>
-					<option> West Bengal </option>
+				
+				<select class = "font" name = "state">
+					<option hidden> State </option>
+					<option value = "Andhra Pradesh"> Andhra Pradesh </option>
+					<option value = "Arunachal Pradesh"> Arunachal Pradesh </option>
+					<option value = "Assam"> Assam </option>
+					<option value = "Bihar" > Bihar </option>
+					<option value = "Chandigarh"> Chandigarh </option>
+					<option value = "Chattisgarh"> Chhattisgarh </option>
+					<option value = "Dadar and Nagar Haveli"> Dadar and Nagar Haveli </option>
+					<option value = "Daman and Diu"> Daman and Diu </option>
+					<option value = "Delhi"> Delhi </option>
+					<option value = "Goa"> Goa </option>
+					<option value = "Gujarat"> Gujarat </option>
+					<option value = "Haryana"> Haryana </option>
+					<option value = "Himachal Pradesh"> Himachal Pradesh </option>
+					<option value = "Jammu and Kashmir"> Jammu and kashmir </option>
+					<option value = "Jharkand"> Jharkand </option>
+					<option value = "Karnataka"> Karnataka </option>
+					<option value = "Kerala"> Kerala </option>
+					<option value = "Lakshadeep"> Lakshadeep </option>
+					<option value = "Madhya Pradesh"> Madhya Pradesh </option>
+					<option value = "Maharashtra"> Maharashtra </option>
+					<option value = "Manipur"> Manipur </option>
+					<option value = "Meghalaya"> Meghalaya </option>
+					<option value = "Mizoram"> Mizoram </option>
+					<option value = "Nagaland"> Nagaland </option>
+					<option value = "Orissa"> Orissa </option>
+					<option value = "Pondicherry"> Pondicherry </option>
+					<option value = "Punjab"> Punjab </option>
+					<option value = "Rajasthan"> Rajasthan </option>
+					<option value = "Sikkim"> Sikkim </option>
+					<option value = "Tamil Nadu"> Tamil Nadu </option>
+					<option value = "Telangana"> Telangana </option>
+					<option value = "Tripura"> Tripura </option>
+					<option value = "Uttaranchal"> Uttaranchal </option>
+					<option value = "Uttar Pradesh"> Uttar Pradesh </option>
+					<option value = "West Bengal"> West Bengal </option>
 				</select>
-			</div> <br>
-			<!-- Address -->
-			<div class = "Address">
-				<input type = "text" name = "address" id = "address-info" class = "address-name" placeholder = "House No./Appartment No." required>
-				<input type = "text" name = "address" id = "address-info" class = "address-name" placeholder = "Road Name, Area, Colony" required>
-			</div> <br>
-			<!-- city -->
-			<div class = "location-city">
-				<input type = "text" name = "city" id = "city-info" class = "location-city" placeholder = "City" required>
-			</div> <br>
-			<!-- Pincode -->
-			<div class = "pincode-number">
-				<input type = "text" name = "pincode-number" id = "pincode-number" class = "pincode-number" placeholder = "Pincode" maxlength = "6">
-			</div> <br>
-			<!-- Mobile Number -->
-			<div class = "mobile">
-				<input type = "text" name = "number" id = "number" class = "number" placeholder = "Mobile Number" required  maxlength = "10">
-			</div>
-			<button class = "btn signup"> Sign Up </button>
+				
+				<input type = "text" class = "font" name = "hno" id = "address-info" class = "address-name" placeholder = "House No./Appartment No." required = "required"> 
+				
+				<input type = "text" class = "font" name = "rname" id = "address-info" class = "address-name" placeholder = "Road Name, Area, Colony" required = "required">
+				
+				<input type = "text" class = "font" name = "city" id = "city-info" class = "location-city" placeholder = "City" required = "required">
+				
+				<input type = "text" class = "font" name = "pincode" id = "pincode-number" class = "pincode-number" placeholder = "Pincode" required = "required">
+				<button type = "submit" id="button" name ="btn"> LOGIN </button>
+				<h3>Already Registered : <a href = "CustomerLogin.jsp">login</a></h3><br>
+			</form>
 		</div>
-	</form>
 	</body>
 </html>
