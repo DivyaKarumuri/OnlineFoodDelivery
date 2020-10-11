@@ -1,24 +1,21 @@
 package com.nacre.ofd.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.ParseException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.nacre.ofd.delegates.AdminRegDelegates;
-import com.nacre.ofd.vo.AdminRegVO;
-@WebServlet("/AdminRegisteration")
-public class AdminRegisteration extends HttpServlet {
+import com.nacre.ofd.delegates.CustomerRegDelegates;
+import com.nacre.ofd.vo.CustomerRegVO;
+
+@WebServlet("/CustomerReg")
+public class CustomerReg extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		AdminRegVO adminRegVO = null;
-		AdminRegDelegates adminRegDelegates = null;
+		CustomerRegVO customerRegVO = null;
+		CustomerRegDelegates customerRegDelegates = null;
 		boolean flag = false;
 		
 		//Accepting the values from the browser in the string format.
@@ -39,35 +36,36 @@ public class AdminRegisteration extends HttpServlet {
 		String pincode = request.getParameter("pincode");
 		
 		//Encapsulating the variable values(VO)
-		adminRegVO = new AdminRegVO();
-		adminRegVO.setFname(fname);
-		adminRegVO.setLname(lname);
-		adminRegVO.setUname(uname);
-		adminRegVO.setPswd(pswd);
-		adminRegVO.setPswd1(pswd1);
-		adminRegVO.setEmail(email);
-		adminRegVO.setMobno(mobno);
-		adminRegVO.setDob(dob);
-		adminRegVO.setGen(gen);
-		adminRegVO.setCountry(country);
-		adminRegVO.setState(state);
-		adminRegVO.setHno(hno);
-		adminRegVO.setRname(rname);
-		adminRegVO.setCity(city);
-		adminRegVO.setPincode(pincode);
+		customerRegVO = new CustomerRegVO();
+		customerRegVO.setFname(fname);
+		customerRegVO.setLname(lname);
+		customerRegVO.setUname(uname);
+		customerRegVO.setPswd(pswd);
+		customerRegVO.setPswd1(pswd1);
+		customerRegVO.setEmail(email);
+		customerRegVO.setMobno(mobno);
+		customerRegVO.setDob(dob);
+		customerRegVO.setGen(gen);
+		customerRegVO.setCountry(country);
+		customerRegVO.setState(state);
+		customerRegVO.setHno(hno);
+		customerRegVO.setRname(rname);
+		customerRegVO.setCity(city);
+		customerRegVO.setPincode(pincode);
 		
 		//passing the variable values to the next level to perform the operations according to the rules.
-		adminRegDelegates = new AdminRegDelegates();
-		flag = adminRegDelegates.parsingVariables(adminRegVO);
+		customerRegDelegates = new CustomerRegDelegates();
+		flag = customerRegDelegates.parsingVariables(customerRegVO);
 		
 		if(flag == true) {
 			
-			response.sendRedirect("AdminLogin.jsp");
+			response.sendRedirect("CustomerLogin.jsp");
 		}
 		else {
 			response.sendRedirect("welcomePage.jsp");
 		}
 
 	}
+
 
 }

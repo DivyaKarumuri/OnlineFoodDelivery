@@ -1,6 +1,7 @@
 .navbar-inverse {
 	font-size : 2em;
 	background: black;
+	opacity : 0.8;
 }
 .navbar-nav {
 	padding : 0 0 0 1em;
@@ -17,7 +18,7 @@
 .navbar-inverse ul ul{
 	position : absolute;
 	padding : 0;
-	min-width : 50em;
+	min-width : 5em;
 	display : none;
 	top : 100%;
 	left : 0;
@@ -26,11 +27,23 @@
 	display : block;
 	position : absolute;
 	background-color : black;
-	min-width : 7em;
+	min-width : 1em;
 	z-index : 1;
 }
 .navbar-inverse > div > ul > li > ul >  a {
 	text-decoration : none;
 	color : #fff;
 	border-radius: 0.5em;
+}
+form button {
+	height : 1.5em;
+	width : 6.1em;
+	font-size : 0.8em;
+	color : #fff;
+	outline : none;
+	cursor : pointer;
+	font-weight : bold;
+	background : #1A237E;
+	transition : .5s;
+	
 }

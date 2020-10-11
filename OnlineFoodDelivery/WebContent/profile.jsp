@@ -5,11 +5,7 @@
 		<link rel = "stylesheet" href = "navbar.css">
 		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!--apply navigationbar-->
 		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-		<style>
-			body {
-				background : url('images/img.jpg') no-repeat center center fixed;
-			}
-		</style>	
+		
 	</head>
 	<body>
 		<nav class = "navbar navbar-inverse">
@@ -21,9 +17,20 @@
 					<li><a href = "profile.jsp"><i class = "fa fa-user">PROFILE</i></a></li>
 				</ul>
 				<ul class = "nav navbar-nav navbar-right">
-					<li><a href = "#"><i class = "fa fa-sign-out">LOGOUT</i></a></li>
+					<li><a href = "#">
+						<form action = "CustomerLogout">
+							<button type = "submit" value = "LOGOUT"><i class = "fa fa-sign-out">LOGOUT</i></button>
+						</form>
+					</a></li>
 				</ul>
 		</div>
 		</nav>
+		<center>
+			<table style = "font-size : 2em;" border = "1">
+				<tr><th> &nbsp USER NAME &nbsp</th><td> &nbsp<%= session.getAttribute("uname")%> &nbsp </td></tr>
+				<tr><th> &nbsp PASSWORD &nbsp</th><td> &nbsp<%= session.getAttribute("pswd")%> &nbsp</td></tr>
+				<tr><th> &nbsp MOBLIE NUMBER &nbsp</th><td> &nbsp<%= session.getAttribute("mobno")%> &nbsp </td></tr>
+			</table>
+		</center>
 	</body>
 </html>

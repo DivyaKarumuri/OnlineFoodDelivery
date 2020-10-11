@@ -32,16 +32,21 @@
 				</ul>
 				<ul class = "nav navbar-nav navbar-right">
 					<li><a href = "orderdetails.jsp"><i class = "fa fa-info-circle">ORDER DETAILS</i></a></li>
-					<li><a href = "#"><i class = "fa fa-sign-out">LOGOUT</i></a></li>
+					<li><a href = "#">
+						<form action = "AdminLogout">
+							<button type = "submit" value = "LOGOUT"><i class = "fa fa-sign-out">LOGOUT</i></button>
+						</form>
+					</a></li>
 				</ul>
 		</div>
 		</nav>
-		<%
-				response.sendRedirect("additem.jsp");
-		%>
+		
 		<div class = "container">
 			<br><label class = "label">ADD ITEM</label>
 			<form class = "form" method = "post" name = "login" action = "AddItems" enctype = "multipart/form-data">
+				
+				<div class = "iid">Item ID</div>
+				<input type = "number" name = "iid" id="iid" required = "required">
 				
 				<div class = "iname">Item Name</div>
 				<input type = "text" name = "iname" id="iname" required = "required">
@@ -56,7 +61,7 @@
 				<input type = "number" name = "discount" id="discount" required = "required">
 				
 				<div class = "rname">Resturant Name</div>
-				<input type = "text" name = "rname" id="rname" required = "required">
+				<input type = "text" name = "rname" id="rname" required = "required"><br><br>
 				
 				<input type = "file" id="btn" name ="upload" value = "UPLOAD IMAGE">
 				

@@ -33,11 +33,6 @@
 		</script>
 	</head>
 	<body>
-		<%
-			if(session.getAttribute("mobno") == null) {
-				response.sendRedirect("AdminLogin.jsp");
-			}
-		%>
 		<div class = "popup">
 			<div class = "popup-close">
 				<button>

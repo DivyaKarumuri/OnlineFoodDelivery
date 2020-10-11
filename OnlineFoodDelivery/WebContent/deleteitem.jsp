@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Add items</title>
+		<title>Delete items</title>
 		<link rel = "stylesheet" href = "navbar.css">
 		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!--apply navigationbar-->
 		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -12,7 +12,7 @@
 			}
 			.container {
 				position : relative;
-				margin : 6em 1em 0em 75em;
+				margin : 8em 1em 0em 75em;
 				width : 30em;
 				height : auto;
 				background : #dedede;
@@ -32,28 +32,32 @@
 				</ul>
 				<ul class = "nav navbar-nav navbar-right">
 					<li><a href = "orderdetails.jsp"><i class = "fa fa-info-circle">ORDER DETAILS</i></a></li>
-					<li><a href = "#"><i class = "fa fa-sign-out">LOGOUT</i></a></li>
+					<li><a href = "#">
+						<form action = "AdminLogout">
+							<button type = "submit" value = "LOGOUT"><i class = "fa fa-sign-out">LOGOUT</i></button>
+						</form>
+					</a></li>
 				</ul>
 		</div>
 		</nav>
 		<div class = "container">
 			<br><label class = "label">DELETE ITEM</label>
-			<form class = "form" method = "post" name = "login" action = "#">
+			<form class = "form" method = "post" name = "login" action = "DeleteItems">
 				<div class = "deleteID">Item ID</div>
 				<input type = "number" name = "iid" id="id" required = "required"> 
 				
 				<div class = "iname">Item Name</div>
-				<input type = "text" name = "iname" id="iname">
+				<input type = "text" name = "iname" id="iname" required = "required">
 				
 				<div class = "rname">Resturant Name</div>
-				<input type = "text" name = "rname" id="rname">
+				<input type = "text" name = "rname" id="rname" required = "required">
 				
 				<div class = "price">Price</div>
-				<input type = "number" name = "price" id="price">
+				<input type = "number" name = "price" id="price" required = "required">
 				
 				<button type = "submit" id="btn" name ="btn"> DELETE </button>
-				<button type = "submit" id="btn" name ="btn"><a href = "AdminHomePage.jsp">BACK TO HOME</a></button><br>
-				<h5><b>Instructions:</b><br>1. Item ID is manadatory.<br>2. Remaining are not manadatory.</h5><br>
+				<button type = "submit" id="btn" name ="btn"><a href = "AdminHomePage.jsp">BACK TO HOME</a></button><br><br>
+				<p><b>NOTE : </b>According to the ITEM ID it will delete...</p>
 			</form>
 		</div>
 	</body>

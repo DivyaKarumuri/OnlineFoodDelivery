@@ -1,8 +1,6 @@
 package com.nacre.ofd.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nacre.ofd.delegates.AdminLoginDelegates;
-import com.nacre.ofd.vo.AdminLoginVO;
+import com.nacre.ofd.delegates.CustomerLoginDelegates;
+import com.nacre.ofd.vo.CustomerLoginVO;
 
-@WebServlet("/AdminLogin")
-public class AdminLogin extends HttpServlet {
+
+@WebServlet("/CustomerLogin")
+public class CustomerLogin extends HttpServlet {
 	
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		AdminLoginVO adminLoginVO = null;
-		AdminLoginDelegates adminLoginDelegates = null;
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		CustomerLoginVO customerLoginVO = null;
+		CustomerLoginDelegates customerLoginDelegates = null;
 		boolean flag = false;
 		
 		//Accepting the values from the browser in the string format.
@@ -27,25 +25,25 @@ public class AdminLogin extends HttpServlet {
 		String pswd = request.getParameter("pswd");
 		String mobno = request.getParameter("mobno");
 		
-		
 		//Encapsulating the variable values(VO)
-		adminLoginVO = new AdminLoginVO();
-		adminLoginVO.setUname(uname);
-		adminLoginVO.setPswd(pswd);
-		adminLoginVO.setMobno(mobno);
+		customerLoginVO = new CustomerLoginVO();
+		customerLoginVO.setUname(uname);
+		customerLoginVO.setPswd(pswd);
+		customerLoginVO.setMobno(mobno);
+		
 		
 		//passing the variable values to the next level to perform the operations according to the rules.
-		adminLoginDelegates = new AdminLoginDelegates();
-		flag = adminLoginDelegates.parsingVariables(adminLoginVO);
+		customerLoginDelegates = new CustomerLoginDelegates();
+		flag = customerLoginDelegates.parsingVariables(customerLoginVO);
 		if(flag == true) {
 			HttpSession session = request.getSession();
 			session.setAttribute("uname", uname);
 			session.setAttribute("pswd", pswd);
 			session.setAttribute("mobno", mobno);
-			response.sendRedirect("AdminHomePage.jsp");
+			response.sendRedirect("CustomerHomePage.jsp");
 		}
 		else {
-			response.sendRedirect("AdminReg.jsp");
+			response.sendRedirect("CustomerReg.jsp");
 		}
 	}
 

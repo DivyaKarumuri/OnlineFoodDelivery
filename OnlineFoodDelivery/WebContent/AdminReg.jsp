@@ -38,11 +38,6 @@
 		</script>
 	</head>
 	<body>
-		<%
-			if(session.getAttribute("mobno") == null) {
-				response.sendRedirect("AdminLogin.jsp");
-			}
-		%>
 		<div class = "container">
 			<h1 class = "label"> ADMIN REGISTRATION </h1>
 			<form class = "signup_form" method = "post" name = "signup" action = "AdminRegisteration" onsubmit = "return validation()">
@@ -73,41 +68,41 @@
 				
 				<select class = "font" name = "state">
 					<option hidden> State </option>
-					<option value = "Andhar Pradesh"> Andhra Pradesh </option>
-					<option> Arunachal Pradesh </option>
-					<option> Assam </option>
-					<option> Bihar </option>
-					<option> Chandigarh </option>
-					<option> Chhattisgarh </option>
-					<option> Dadar and Nagar Haveli </option>
-					<option> Daman and Diu </option>
-					<option> Delhi </option>
-					<option> Goa </option>
-					<option> Gujarat </option>
-					<option> Haryana </option>
-					<option> Himachal Pradesh </option>
-					<option> Jammu and kashmir </option>
-					<option> Jharkand </option>
-					<option> Karnataka </option>
-					<option> Kerala </option>
-					<option> Lakshadeep </option>
-					<option> Madhya Pradesh </option>
-					<option> Maharashtra </option>
-					<option> Manipur </option>
-					<option> Meghalaya </option>
-					<option> Mizoram </option>
-					<option> Nagaland </option>
-					<option> Orissa </option>
-					<option> Pondicherry </option>
-					<option> Punjab </option>
-					<option> Rajasthan </option>
-					<option> Sikkim </option>
-					<option> Tamil Nadu </option>
-					<option> Telangana </option>
-					<option> Tripura </option>
-					<option> Uttaranchal </option>
-					<option> Uttar Pradesh </option>
-					<option> West Bengal </option>
+					<option value = "Andhra Pradesh"> Andhra Pradesh </option>
+					<option value = "Arunachal Pradesh"> Arunachal Pradesh </option>
+					<option value = "Assam"> Assam </option>
+					<option value = "Bihar" > Bihar </option>
+					<option value = "Chandigarh"> Chandigarh </option>
+					<option value = "Chattisgarh"> Chhattisgarh </option>
+					<option value = "Dadar and Nagar Haveli"> Dadar and Nagar Haveli </option>
+					<option value = "Daman and Diu"> Daman and Diu </option>
+					<option value = "Delhi"> Delhi </option>
+					<option value = "Goa"> Goa </option>
+					<option value = "Gujarat"> Gujarat </option>
+					<option value = "Haryana"> Haryana </option>
+					<option value = "Himachal Pradesh"> Himachal Pradesh </option>
+					<option value = "Jammu and Kashmir"> Jammu and kashmir </option>
+					<option value = "Jharkand"> Jharkand </option>
+					<option value = "Karnataka"> Karnataka </option>
+					<option value = "Kerala"> Kerala </option>
+					<option value = "Lakshadeep"> Lakshadeep </option>
+					<option value = "Madhya Pradesh"> Madhya Pradesh </option>
+					<option value = "Maharashtra"> Maharashtra </option>
+					<option value = "Manipur"> Manipur </option>
+					<option value = "Meghalaya"> Meghalaya </option>
+					<option value = "Mizoram"> Mizoram </option>
+					<option value = "Nagaland"> Nagaland </option>
+					<option value = "Orissa"> Orissa </option>
+					<option value = "Pondicherry"> Pondicherry </option>
+					<option value = "Punjab"> Punjab </option>
+					<option value = "Rajasthan"> Rajasthan </option>
+					<option value = "Sikkim"> Sikkim </option>
+					<option value = "Tamil Nadu"> Tamil Nadu </option>
+					<option value = "Telangana"> Telangana </option>
+					<option value = "Tripura"> Tripura </option>
+					<option value = "Uttaranchal"> Uttaranchal </option>
+					<option value = "Uttar Pradesh"> Uttar Pradesh </option>
+					<option value = "West Bengal"> West Bengal </option>
 				</select>
 				
 				<input type = "text" class = "font" name = "hno" id = "address-info" class = "address-name" placeholder = "House No./Appartment No." required = "required"> 

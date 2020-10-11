@@ -40,7 +40,7 @@
 	<body>
 		<div class = "container">
 			<h1 class = "label"> CUSTOMER LOGIN </h1>
-			<form class = "signup_form" method = "post" name = "signup" action = "AdminReg" onsubmit = "return validation()">
+			<form class = "signup_form" method = "post" name = "signup" action = "CustomerReg" onsubmit = "return validation()">
 				
 				<input type = "text" class = "font" name = "fname" required = "required" placeholder = "first name"> 
 				
@@ -63,7 +63,7 @@
 				
 				<select class = "font" name = "country"> 
 					<option hidden> Country </option>
-					<option value = "Indai"> India </option>
+					<option value = "India"> India </option>
 				</select>
 				
 				<select class = "font" name = "state">

@@ -17,7 +17,11 @@
 					<li><a href = "profile.jsp"><i class = "fa fa-user">PROFILE</i></a></li>
 				</ul>
 				<ul class = "nav navbar-nav navbar-right">
-					<li><a href = "#"><i class = "fa fa-sign-out">LOGOUT</i></a></li>
+					<li><a href = "#">
+						<form action = "CustomerLogout">
+							<button type = "submit" value = "LOGOUT"><i class = "fa fa-sign-out">LOGOUT</i></button>
+						</form>
+					</a></li>
 				</ul>
 			</div>
 	</nav>
