@@ -112,7 +112,7 @@
 				<input type = "text" class = "font" name = "city" id = "city-info" class = "location-city" placeholder = "City" required = "required">
 				
 				<input type = "text" class = "font" name = "pincode" id = "pincode-number" class = "pincode-number" placeholder = "Pincode" required = "required">
-				<button type = "submit" id="button" name ="btn"> LOGIN </button>
+				<button type = "submit" id="button" name ="btn"> REGISTER </button>
 				<h3>Already Registered : <a href = "AdminLogin.jsp">login</a></h3><br>
 			</form>
 		</div>

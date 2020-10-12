@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.nacre.ofd.delegates.AdminLoginDelegates;
 import com.nacre.ofd.delegates.DeleteItemsDelegates;
@@ -46,7 +47,7 @@ public class DeleteItems extends HttpServlet {
 		deleteItemsDelegates = new DeleteItemsDelegates();
 		flag = deleteItemsDelegates.parsingVariables(deleteItemsVO);
 		if(flag == false) {
-				response.sendRedirect("deleteitem.jsp");
+			response.sendRedirect("deleteitem.jsp");
 		}
 		else {
 				response.sendRedirect("AdminHomePage.jsp");

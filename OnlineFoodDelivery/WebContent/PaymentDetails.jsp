@@ -7,6 +7,11 @@
 		<link rel = "stylesheet" type = "text/css" href = "style.css">
 	</head>
 	<body>
+		<%
+			if(session.getAttribute("uname") == null || session.getAttribute("pswd") == null || session.getAttribute("mobno") == null) {
+				response.sendRedirect("CustomerLogin.jsp");
+			}
+		%>
 		<div class = "checkout-panel">
 			<div class = "panel-body">
 				<div class = "heading1"> PAYMENT DETAILS </div> <br>
@@ -17,16 +22,16 @@
 				<div class = "step"> </div>
 				<div class = "step"> </div>
 			</div>
-
+			<form action = "PaymentServlet" method = "post">
 			<div class="payment-method">
 				<label for="card" class="method card">
 					<div class="card-logo">
-						<img src="Images/visa_logo.png">
-						<img src="Images/mastercard_logo.png">
+						<img src="images/visa_logo.png">
+						<img src="images/mastercard_logo.png">
 					</div>
 
 					<div class="radio-input">
-						<input id = "card" type ="radio" name = "payment">
+						<input id = "card" type ="radio" value = "card" name = "payment" required = "required">
 							Pay with Debit Card / Credit Card <br>
 						<!-- <input id = "card" type = "radio" name = "payment">
 							Pay with GooglePay / AmazonPay / Paytm / PhonePe <br> <br> 
@@ -43,12 +48,12 @@
 				</label>
 				<label for = "googlePay" class = "method googlePay">
 					<div class = "card-logo">
-      					<img src = "Images/GooglePay-logo.png">
-      					<img src = "Images/amazonpay_logo.png">
-      					<img src = "Images/PhonePe_logo.png">
+      					<img src = "images/GooglePay-logo.png">
+      					<img src = "images/amazonpay_logo.png">
+      					<img src = "images/PhonePe_logo.png">
       				</div>
       				<div class = "radio-input">
-      					<input type = "radio" name = "payment" id = "googlePay">
+      					<input type = "radio" value = "UPI pin" required = "required" name = "payment" id = "googlePay">
       						Pay with GooglePay/AmazonPay/PhonePe
       				</div>
       			</label>
@@ -57,29 +62,30 @@
 			<div class="input-fields">
 				<div class="column-1">
 					<label for = "cardholder"> Cardholder's Name</label>
-					<input type = "text" id = "cardholder" placeholder = "As per in your ATM-Card">
+					<input type = "text" name = "cardholder" id = "cardholder" placeholder = "As per in your ATM-Card" required = "required">
 					<div class = "small-inputs">
 						<div>
 							<label for ="date"> Valid thru </label>
-							<input type ="text" id = "date" placeholder = "02/23">
+							<input type ="text" name = "date" id = "date" placeholder = "02/23" required = "required">
 						</div>
 						<div>
 							<label for="verification"> CVV </label>
-								<input type = "password" id = "verification" maxlength = "3" placeholder = "123">
+								<input type = "password"  name = "verification" id = "verification" required = "required" maxlength = "3" placeholder = "123">
 						</div>
 					</div>
 				</div>
 				<div class="column-2">
 					<label for="cardnumber"> Card Number</label>
-						<input type="text" id="cardnumber" placeholder = "1234 5678 9012 1234">
+						<input type="text" id="cardnumber" name = "cardnumber" required = "required" placeholder = "1234 5678 9012 3456">
 							<span class="info"> *CVV is the card security code, unique three digits number on the back of your card separate from its number.</span>
 				</div>
 			</div>
 		</div>
 
 		<div class="panel-footer">
-			<button class ="btn back-btn"> Back </button>
-			<button class ="btn next-btn"> Next Step </button>
+			<br><center><button class ="btn next-btn">Next Step</button></center>
 		</div>
+		</div>
+		</form>
 	</body>
 </html>

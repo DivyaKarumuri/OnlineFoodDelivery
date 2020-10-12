@@ -22,6 +22,11 @@
 		</style>		
 	</head>
 	<body>
+		<%
+			if(session.getAttribute("uname") == null || session.getAttribute("pswd") == null || session.getAttribute("mobno") == null) {
+				response.sendRedirect("AdminLogin.jsp");
+			}
+		%>
 		<nav class = "navbar navbar-inverse">
 			<div class = "container-fluid">
 				<ul class = "nav navbar-nav">
@@ -31,7 +36,7 @@
 					<li><a href = "updateitem.jsp"><i class = "fa fa-pencil">UPDATE ITEM</i></a></li>
 				</ul>
 				<ul class = "nav navbar-nav navbar-right">
-					<li><a href = "orderdetails.jsp"><i class = "fa fa-info-circle">ORDER DETAILS</i></a></li>
+					<!--<li><a href = "orderdetails.jsp"><i class = "fa fa-info-circle">ORDER DETAILS</i></a></li>-->
 					<li><a href = "#">
 						<form action = "AdminLogout">
 							<button type = "submit" value = "LOGOUT"><i class = "fa fa-sign-out">LOGOUT</i></button>

@@ -27,7 +27,7 @@
 					<li><a href = "updateitem.jsp"><i class = "fa fa-pencil">UPDATE ITEM</i></a></li>
 				</ul>
 				<ul class = "nav navbar-nav navbar-right">
-					<li><a href = "orderdetails.jsp"><i class = "fa fa-info-circle">Order Details</i></a></li>
+					<!--<li><a href = "orderdetails.jsp"><i class = "fa fa-info-circle">Order Details</i></a></li>-->
 					<li><a href = "#">
 						<form action = "AdminLogout">
 							<button type = "submit" value = "LOGOUT"><i class = "fa fa-sign-out">LOGOUT</i></button>

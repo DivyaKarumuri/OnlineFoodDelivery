@@ -42,9 +42,7 @@ public class AddItems extends HttpServlet {
 		//DataBase Logic
 		try {
 			con = DBConnection.getDBConnection();
-			
 			if(con != null) {
-				
 				ps = con.prepareStatement("insert into tab_items values(?,?, ?,?, ?,?, ?)");
 				ps.setInt(1,iid);
 				ps.setString(2, itemName);
@@ -67,7 +65,7 @@ public class AddItems extends HttpServlet {
 			response.sendRedirect("additem.jsp");
 		}
 		else {
-			response.sendRedirect("AdminLogin.jsp");
+			response.sendRedirect("AdminHomePage.jsp");
 		}
 	}
 

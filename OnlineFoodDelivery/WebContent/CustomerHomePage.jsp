@@ -39,8 +39,8 @@
 			<div class = "container-fluid">
 				<ul class = "nav navbar-nav">
 					<li><a href = "CustomerHomePage.jsp" ><i class = "fa fa-home">HOME</i></a></li>
-					<li><a href = "search.jsp"><i class = "fa fa-search">SEARCH</i></a></li>
-					<li><a href = "cart.jsp"><i class = "fa fa-shopping-cart">CART</i></a></li>
+					<li><a href = "searchHome.jsp"><i class = "fa fa-search">SEARCH</i></a></li>
+					<!--  <li><a href = "cart.jsp"><i class = "fa fa-shopping-cart">CART</i></a></li>-->
 					<li><a href = "profile.jsp"><i class = "fa fa-user">PROFILE</i></a></li>
 				</ul>
 				<ul class = "nav navbar-nav navbar-right">

@@ -7,6 +7,11 @@
 		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	</head>
 	<body>
+		<%
+			if(session.getAttribute("uname") == null || session.getAttribute("pswd") == null || session.getAttribute("mobno") == null) {
+				response.sendRedirect("AdminLogin.jsp");
+			}
+		%>
 		<nav class = "navbar navbar-inverse">
 			<div class = "container-fluid">
 				<ul class = "nav navbar-nav">

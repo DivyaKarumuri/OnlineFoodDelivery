@@ -43,7 +43,7 @@ public class CustomerLogin extends HttpServlet {
 			response.sendRedirect("CustomerHomePage.jsp");
 		}
 		else {
-			response.sendRedirect("CustomerReg.jsp");
+			response.sendRedirect("wrongdetails.jsp");
 		}
 	}
 

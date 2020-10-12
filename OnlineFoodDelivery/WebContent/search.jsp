@@ -1,11 +1,12 @@
-<%@page import = "java.sql.DriverManager" %>
-<%@page import = "java.sql.Connection" %>
-<%@page import = "java.sql.Statement" %>
-<%@page import = "java.sql.ResultSet" %>
-<!doctype html>
+<%@page import = "java.util.ArrayList" %>
+<%@page import = "com.nacre.ofd.dto.ImageDTO" %>
+<%@page import = "java.util.List" %>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>SEARCH PAGE</title>
+<head>
+	<title>SEARCH PAGE</title>
 		<link rel = "stylesheet" href = "navbar.css">
 		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!--apply navigationbar-->
 		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -39,14 +40,14 @@
 			}
 		}
 		</script>	
-	</head>
-	<body>
+</head>
+<body>
 		<nav class = "navbar navbar-inverse">
 			<div class = "container-fluid">
 				<ul class = "nav navbar-nav">
 					<li><a href = "CustomerHomePage.jsp" ><i class = "fa fa-home">HOME</i></a></li>
 					<li><a href = "search.jsp"><i class = "fa fa-search">SEARCH</i></a></li>
-					<li><a href = "cart.jsp"><i class = "fa fa-shopping-cart">CART</i></a></li>
+					<!--  	<li><a href = "cart.jsp"><i class = "fa fa-shopping-cart">CART</i></a></li>-->
 					<li><a href = "profile.jsp"><i class = "fa fa-user">PROFILE</i></a></li>
 				</ul>
 				<ul class = "nav navbar-nav navbar-right">
@@ -66,57 +67,36 @@
 				</tr>
 			</table>
 		</div>
+		<form action = "CheckItems.jsp" name = "form" method = "get" enctype = "multipart/form-data">
 		<center>
-		<h3>PLZ SELECT THE CHECKBOX TO FORWARD THE ORDER</h3>
-		<table id = "myTable">
-			<thead>
-			<tr class = "header">
-				<th style = "width : 15%">Item ID</th>
-				<th style = "width : 25%">Item Name</th>
-				<th style = "width : 30%">Restaurant Name</th>
-				<th style = "width : 10%">Price</th>
-				<th style = "width : 10%">Quantity</th>
-			</tr>
-			</thead>
-			<tbody>
-			<%
-				String driverName = "com.mysql.jdbc.Driver";
-				String url = "jdbc:mysql://localhost:3306/";
-				String dbName = "demo";
-				String userName = "root";
-				String password = "divya";
-				try {
-					Class.forName(driverName);
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-				}
-				Connection con = null;
-				Statement st = null;
-				ResultSet rs = null;
+		<br><p style = "color : red"><b>*NOTE: </b>PLZ SELECT THE CHECKBOX TO FORWARD THE ORDER , ACCORDING TO THE NEED INCREASE THE QUANTITY OF THE ITEM</p>
+	<%
+		List<ImageDTO> list = (ArrayList<ImageDTO>)(request.getAttribute("list"));
+	%>
+		
+		<%
+			for(int i = 0; i <list.size();i++) { 
+				ImageDTO imageDTO = list.get(i);
+				String iid = imageDTO.getIid();
+				String iname = imageDTO.getIname();
+				String price = imageDTO.getPrice();
+				String deliverycharges = imageDTO.getDeliverycharges();
+				String discount = imageDTO.getDiscount();
 			%>
-			<% 
-				try {
-					con = DriverManager.getConnection(url+dbName,userName,password);
-					st = con.createStatement();
-					String query = "select * from fooditem";
-					rs = st.executeQuery(query);
-					while(rs.next()) {
-			%>
-			<tr>
-				<td><input type = "checkbox"><%=rs.getInt(1) %></td>
-				<td><%=rs.getString(2) %></td>
-				<td><%=rs.getString(3) %></td>
-				<td><%=rs.getInt(4) %></td>
-				<td><input type = "number" style = "width : 2em"></td>
-			</tr>
-			<%
-					} 
-				} catch(Exception e) {
-					e.printStackTrace();
-				}
-			%> 
-		</tbody>
-		</table>
-		</center>
-	</body>
+				
+				<table border = "1px" style = "margin-left : 0.7em; float : left;">
+				<tr><td><img src = "./ImageDownloader?iid=<%=iid%>"/></td></tr>
+				<tr><td>Check It To Order &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : <input type = "checkbox" name = "check" value = "<%=iid%>"></tr>
+				<tr><td>Item Name &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : <%=iname%></td></tr>
+				<tr><td>Price &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : <%=price %></td></tr>
+				<tr><td>Delivery Charges &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : <%=deliverycharges %></td></tr>
+				<tr><td>Discount &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : <%=discount %></td></tr>
+				<tr><td>Quantity &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : <input type = "number" name = "quantity" style = "width : 2em" value = "1"></td></tr>
+				</table>
+			<%}
+		%>
+		<input type = "submit" id = "btn" value = "PLACE AN ORDER & PAYMENT" style = " margin-top : 2em; width : 30em; height : 3em;font-size : 1em; color : white; background : #1A237E; transition : .5s;">
+</center>
+</form>
+</body>
 </html>

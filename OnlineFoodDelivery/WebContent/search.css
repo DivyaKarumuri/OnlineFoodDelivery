@@ -35,7 +35,7 @@
 	border-collapse : collapse;
 	width : 40em;
 	border : 0.2em solid #ddd;
-	font-size : 2em;
+	font-size : 1.3em;
 }
 #myTable th, #myTable td {
 	text-align : left;

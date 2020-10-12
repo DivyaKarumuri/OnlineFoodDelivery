@@ -45,7 +45,7 @@ public class AdminLogin extends HttpServlet {
 			response.sendRedirect("AdminHomePage.jsp");
 		}
 		else {
-			response.sendRedirect("AdminReg.jsp");
+			response.sendRedirect("detailswrong.jsp");
 		}
 	}
 
