@@ -19,6 +19,7 @@ public class AdminRegDAO implements registerDao{
 		//DataBase Logic
 		try {
 			con = DBConnection.getDBConnection();
+			System.out.println("CONNECTION ESTABLISHED");
 			if(con != null) {
 				ps = con.prepareStatement("insert into tab_register values(?,?,?, ?,?,?, ?,?,?, ?,?,?, ?,?,?)");
 				ps.setString(1, adminRegBO.getFname());

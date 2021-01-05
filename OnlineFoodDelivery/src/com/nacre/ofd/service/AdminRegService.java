@@ -33,6 +33,8 @@ public class AdminRegService implements serviceReg {
 				hno = adminRegDTO.getHno();
 				rname = adminRegDTO.getRname();
 				city = adminRegDTO.getCity();
+				System.out.println("I am in services");
+				System.out.println(fname+" "+lname+" "+uname+" "+email+" "+pswd+" "+pswd1+" "+mobno+" "+dob+" "+gen+" "+country+" "+state+" "+hno+" "+rname+" "+city+" "+pincode);
 				
 			
 				//creating an object

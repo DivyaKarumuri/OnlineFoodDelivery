@@ -54,6 +54,8 @@ public class AdminRegDelegates {
 		adminRegDTO.setRname(rname);
 		adminRegDTO.setCity(city);
 		adminRegDTO.setPincode(pincode);
+		System.out.println("I am in delegates");
+		System.out.println(fname+" "+lname+" "+uname+" "+email+" "+pswd+" "+pswd1+" "+mobno+" "+dob+" "+gen+" "+country+" "+state+" "+hno+" "+rname+" "+city+" "+pincode);
 		
 		//passing the variable values to the next level to perform the operations according to the rules.
 		adminRegService = new AdminRegService();

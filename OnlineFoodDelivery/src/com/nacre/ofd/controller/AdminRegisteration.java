@@ -55,6 +55,8 @@ public class AdminRegisteration extends HttpServlet {
 		adminRegVO.setRname(rname);
 		adminRegVO.setCity(city);
 		adminRegVO.setPincode(pincode);
+		System.out.println("I am in controller");
+		System.out.println(fname+" "+lname+" "+uname+" "+email+" "+pswd+" "+pswd1+" "+mobno+" "+dob+" "+gen+" "+country+" "+state+" "+hno+" "+rname+" "+city+" "+pincode);
 		
 		//passing the variable values to the next level to perform the operations according to the rules.
 		adminRegDelegates = new AdminRegDelegates();
